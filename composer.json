@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "pikarin/laravel-inertia-vue-starter",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A Laravel Inertia Vue Starter",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
