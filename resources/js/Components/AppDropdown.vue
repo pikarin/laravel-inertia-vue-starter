@@ -1,3 +1,50 @@
+<script setup>
+import { onMounted, onUnmounted, defineProps, ref, computed } from 'vue'
+
+const props = defineProps({
+    align: {
+        type: String,
+        default: 'right'
+    },
+    width: {
+        type: String,
+        default: '48'
+    },
+    contentClasses: {
+        type: Array,
+        default: () => ['py-1', 'bg-white']
+    }
+})
+
+const widthClass = computed(() => {
+    return {
+        '48': 'w-48',
+    }[props.width.toString()]
+})
+
+const alignmentClasses = computed(() => {
+    if (this.align === 'left') {
+        return 'origin-top-left left-0'
+    } else if (this.align === 'right') {
+        return 'origin-top-right right-0'
+    } else {
+        return 'origin-top'
+    }
+})
+
+
+let open = ref(false)
+
+const closeOnEscape = (e) => {
+    if (open.value && e.key === 'Escape') {
+        open.value = false
+    }
+}
+
+onMounted(() => document.addEventListener('keydown', closeOnEscape))
+onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
+</script>
+
 <template>
 <div class="relative">
     <div @click="open = ! open">
@@ -27,59 +74,3 @@
     </transition>
 </div>
 </template>
-
-<script>
-import { onMounted, onUnmounted, ref } from 'vue'
-
-export default {
-    props: {
-        align: {
-            type: String,
-            default: 'right'
-        },
-        width: {
-            type: String,
-            default: '48'
-        },
-        contentClasses: {
-            type: Array,
-            default: () => ['py-1', 'bg-white']
-        }
-    },
-
-    setup() {
-        let open = ref(false)
-
-        const closeOnEscape = (e) => {
-            if (open.value && e.key === 'Escape') {
-                open.value = false
-            }
-        }
-
-        onMounted(() => document.addEventListener('keydown', closeOnEscape))
-        onUnmounted(() => document.removeEventListener('keydown', closeOnEscape))
-
-        return {
-            open,
-        }
-    },
-
-    computed: {
-        widthClass() {
-            return {
-                '48': 'w-48',
-            }[this.width.toString()]
-        },
-
-        alignmentClasses() {
-            if (this.align === 'left') {
-                return 'origin-top-left left-0'
-            } else if (this.align === 'right') {
-                return 'origin-top-right right-0'
-            } else {
-                return 'origin-top'
-            }
-        },
-    }
-}
-</script>

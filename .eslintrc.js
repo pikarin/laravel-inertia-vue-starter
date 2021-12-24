@@ -18,5 +18,8 @@ module.exports = {
         'vue/html-indent': ['error', 4, {
             baseIndent: 0,
         }],
+    },
+    globals: {
+        'route': 'readonly',
     }
 }

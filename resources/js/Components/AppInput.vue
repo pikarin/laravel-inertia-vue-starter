@@ -1,17 +1,19 @@
-<template>
-<input ref="input" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
-</template>
+<script setup>
+import { defineProps, defineEmits, ref } from 'vue'
 
-<script>
-export default {
-    props: { modelValue: String },
+const emit = defineEmits(['update:modelValue'])
 
-    emits: ['update:modelValue'],
+defineProps({
+    modelValue: String
+})
 
-    methods: {
-        focus() {
-            this.$refs.input.focus()
-        }
-    }
+const input = ref(null)
+
+const focus = () => { // eslint-disable-line
+    input.value.focus()
 }
 </script>
+
+<template>
+<input ref="input" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="modelValue" @input="emit('update:modelValue', $event.target.value)">
+</template>

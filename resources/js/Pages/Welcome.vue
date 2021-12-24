@@ -1,3 +1,15 @@
+<script setup>
+import { defineProps } from 'vue'
+import { Head, Link } from '@inertiajs/inertia-vue3'
+
+defineProps({
+    canLogin: Boolean,
+    canRegister: Boolean,
+    laravelVersion: String,
+    phpVersion: String,
+})
+</script>
+
 <template>
 <Head title="Welcome" />
 
@@ -202,23 +214,6 @@
     </div>
 </div>
 </template>
-
-<script>
-import { Head, Link } from '@inertiajs/inertia-vue3'
-
-export default {
-    components: {
-        Head,
-        Link,
-    },
-    props: {
-        canLogin: Boolean,
-        canRegister: Boolean,
-        laravelVersion: String,
-        phpVersion: String,
-    },
-}
-</script>
 
 <style scoped>
 .bg-gray-100 {
