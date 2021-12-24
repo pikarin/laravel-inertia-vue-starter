@@ -2,7 +2,7 @@
 import BreezeButton from '@/Components/AppButton.vue'
 import BreezeGuestLayout from '@/Layouts/Guest.vue'
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
     status: String,

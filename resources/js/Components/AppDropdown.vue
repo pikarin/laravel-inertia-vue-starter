@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, defineProps, ref, computed } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 
 const props = defineProps({
     align: {

@@ -6,7 +6,6 @@ import BreezeInput from '@/Components/AppInput.vue'
 import BreezeLabel from '@/Components/AppLabel.vue'
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue'
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3'
-import { defineProps } from 'vue'
 
 defineProps({
     canResetPassword: Boolean,
