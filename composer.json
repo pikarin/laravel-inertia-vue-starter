@@ -2,14 +2,17 @@
     "name": "pikarin/laravel-inertia-vue-starter",
     "type": "project",
     "description": "A Laravel Inertia Vue Starter",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.5.4",
-        "laravel/framework": "^9.0",
+        "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "tightenco/ziggy": "^1.4.3"
